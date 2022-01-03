@@ -1,5 +1,9 @@
 # vimconfig
-My vim configuration
+My Linux/Vim configuration
+
+OS: Ubuntu Budgie
+
+Shell: Oh-my-zshell
 
 Terminal Emulator: Tilix
 
