@@ -20,3 +20,5 @@
   * [vim-move](https://github.com/matze/vim-move)
   * [nord-vim](https://github.com/arcticicestudio/nord-vim)
   * [python-syntax](https://github.com/vim-python/python-syntax)
+
+![Image of Config](Example.PNG "Example Configuration")
