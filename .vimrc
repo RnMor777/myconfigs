@@ -1,5 +1,5 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -7,7 +7,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ajh17/vimcompletesme'
 Plugin 'preservim/nerdcommenter'
-Plugin 'frazrepo/vim-rainbow'
 Plugin 'itchyny/lightline.vim'
 Plugin 'raimondi/delimitmate'
 Plugin 'aperezdc/vim-template'
@@ -16,6 +15,8 @@ Plugin 'arcticicestudio/nord-vim'
 Plugin 'vim-python/python-syntax'
 Plugin 'mengelbrecht/lightline-bufferline'
 Plugin 'itchyny/vim-gitbranch'
+Plugin 'dense-analysis/ale'
+Plugin 'maximbaz/lightline-ale'
 
 call vundle#end() 
 filetype plugin indent on 
@@ -46,7 +47,7 @@ let g:lightline = {
       \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
-      \   'right': [ ['lineinfo' ]]
+      \   'right': [ [ 'lineinfo', 'linter_errors', 'linter_warnings', 'linter_infos' ]]
       \ },
       \ 'tabline': {
       \   'left': [ [ 'buffers' ] ],
@@ -56,10 +57,16 @@ let g:lightline = {
       \     'lineinfo': "\ue0a1 %l:%-2c", 'line': '%l', 'column': '%c', 'close': '%999X X ', 'winnr': '%{winnr()}' 
       \ },
       \ 'component_expand': {
-      \   'buffers': 'lightline#bufferline#buffers'
+      \   'buffers': 'lightline#bufferline#buffers',
+      \   'linter_infos': 'lightline#ale#infos',
+      \   'linter_warnings': 'lightline#ale#warnings',
+      \   'linter_errors': 'lightline#ale#errors',
       \ },
       \ 'component_type': {
-      \   'buffers': 'tasel'
+      \   'buffers': 'tasel',
+      \   'linter_infos': 'right',
+      \   'linter_warnings': 'warning',
+      \   'linter_errors': 'error',
       \ },
       \ 'component_function': {
       \   'gitbranch': 'AddGitSymbol'
@@ -74,6 +81,11 @@ let g:lightline#bufferline#show_number = 1
 let g:lightline#bufferline#shorten_path = 0
 let g:lightline#bufferline#min_buffer_count = 2
 let g:lightline#bufferline#unnamed = '[No Name]'
+
+" lightline-ale config
+let g:lightline#ale#indicator_infos = "\uf129 "
+let g:lightline#ale#indicator_warnings = "\uf071 "
+let g:lightline#ale#indicator_errors = "\uf05e "
 
 " Adds the unicode git symbol
 function! AddGitSymbol()
@@ -93,6 +105,11 @@ function SetupLightlineColors() abort
   let l:palette.tabline.middle = l:palette.normal.middle
   call lightline#colorscheme()
 endfunction
+
+let g:ale_sign_error = " \u25cf"
+let g:ale_sign_warning = ' .'
+let g:ale_nasm_nasm_options = '-f elf'
+"let g:ale_linters = {'nasm': [] }
 
 " enables python syntax
 let g:python_highlight_all = 1
@@ -132,6 +149,10 @@ nmap <Leader>c7 <Plug>lightline#bufferline#delete(7)
 nmap <Leader>c8 <Plug>lightline#bufferline#delete(8)
 nmap <Leader>c9 <Plug>lightline#bufferline#delete(9)
 nmap <Leader>c0 <Plug>lightline#bufferline#delete(10)
+
+" jump to errors
+nmap <Leader><Up> <Plug>(ale_previous_wrap)
+nmap <Leader><Down> <Plug>(ale_next_wrap)
 
 " Remembers Folds
 augroup remember_folds
