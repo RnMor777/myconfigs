@@ -17,6 +17,7 @@ Plugin 'mengelbrecht/lightline-bufferline'
 Plugin 'itchyny/vim-gitbranch'
 Plugin 'dense-analysis/ale'
 Plugin 'maximbaz/lightline-ale'
+Plugin 'aben20807/vim-runner'
 
 call vundle#end() 
 filetype plugin indent on 
@@ -78,7 +79,6 @@ let g:lightline.separator = { 'left': "\ue0b0", 'right': "\ue0b2" }
 let g:lightline#bufferline#enable_nerdfont = 1
 let g:lightline#bufferline#unicode_symbols = 1
 let g:lightline#bufferline#show_number = 1
-let g:lightline#bufferline#shorten_path = 0
 let g:lightline#bufferline#min_buffer_count = 2
 let g:lightline#bufferline#unnamed = '[No Name]'
 
@@ -109,7 +109,6 @@ endfunction
 let g:ale_sign_error = " \u25cf"
 let g:ale_sign_warning = ' .'
 let g:ale_nasm_nasm_options = '-f elf'
-"let g:ale_linters = {'nasm': [] }
 
 " enables python syntax
 let g:python_highlight_all = 1
@@ -122,6 +121,11 @@ map <C-Right> $
 map <C-Left> ^
 map! <C-Right> <Esc>$i
 map! <C-Left> <Esc>^i
+
+" sets up compile/running
+let g:runner_run_key = "<Leader>r :silent :!clear<CR>"
+let g:runner_print_time_usage = 0
+let g:runner_auto_remove_tmp = 1
 
 " sets up move lines up/down
 map <C-Up> <C-k>
