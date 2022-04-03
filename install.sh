@@ -21,7 +21,8 @@ echo "source ~/peda/peda.py" >> ~/.gdbinit
 printf '\nInstalling fonts & colors...\n'
 sleep 1
 sudo wget https://github.com/ryanoasis/powerline-extra-symbols/raw/ae05de7c51f6609479f4f1a4a0f6f65631731c1b/src/PowerlineSymbols.otf -O /usr/share/fonts/opentype/PowerLineSymbols.otf
-sudo wget https://github.com/RnMor777/myconfigs/raw/main/Fura%20Code%20Regular%20Nerd%20Font%20Complete%20Mono.otf -O /usr/share/fonts/opentype/Fura_Code_Regular_Nerd_Font_Complete.Mono.otf
+#sudo wget https://github.com/RnMor777/myconfigs/raw/main/Fura%20Code%20Regular%20Nerd%20Font%20Complete%20Mono.otf -O /usr/share/fonts/opentype/Fura_Code_Regular_Nerd_Font_Complete.Mono.otf
+sudo wget https://github.com/RnMor777/myconfigs/raw/main/Fura%20Code%20Medium%20Nerd%20Font%20Complete%20Mono.otf -O /usr/share/fonts/opentype/Fura_Code_Medium_Nerd_Font_Complete_Mono.otf
 sudo fc-cache -v
 sudo curl https://raw.githubusercontent.com/arcticicestudio/nord-tilix/develop/src/json/nord.json > /usr/share/tilix/schemes
 
