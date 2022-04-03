@@ -4,9 +4,9 @@ cd ~
 
 printf '\nUpdating & Upgrading...\n'
 sleep 1
-sudo apt update > /dev/null
-sudo apt upgrade -y > /dev/null
-sudo apt auto-remove -y> /dev/null
+sudo apt update
+sudo apt upgrade -y
+sudo apt auto-remove -y
 
 printf '\nInstalling useful tools...\n'
 sleep 1
