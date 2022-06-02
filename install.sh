@@ -39,7 +39,7 @@ printf '\nInstalling Vim...\n'
 sleep 1
 sudo apt install vim -y
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-curl https://github.com/RnMor777/myconfigs/blob/main/.pylintrc > .pylintrc
+curl https://raw.githubusercontent.com/RnMor777/myconfigs/main/.pylintrc > .pylintrc
 curl https://raw.githubusercontent.com/RnMor777/myconfigs/main/.vimrc > .vimrc
 vim +PluginInstall +qall
 
