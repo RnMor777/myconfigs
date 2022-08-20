@@ -3,7 +3,6 @@
 cd ~
 
 printf '\nInstalling Additonal Python Modules...\n'
-exit
 sleep 1
 pip3 install --upgrade numpy imagehash pefile peutils pillow networkx olefile
 
