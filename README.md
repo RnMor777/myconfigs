@@ -1,5 +1,5 @@
 # Linux Config
-  * OS - Ubuntu Budgie
+  * OS - Zorin
 
 # Shell Config
   * Terminal Emulator - [Tilix](https://github.com/gnunn1/tilix)

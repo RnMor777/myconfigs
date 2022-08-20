@@ -10,7 +10,7 @@ sudo apt auto-remove -y
 
 printf '\nInstalling Packages...\n'
 sleep 1
-sudo apt install wget curl python3 net-tools git tilix python3 python3-all python3-pip gcc nasm gcc-multilib gdb -y
+sudo apt install wget curl python3 net-tools git tilix python3 python3-all python3-pip gcc nasm gcc-multilib gdb htop -y
 pip3 install pylint
 
 printf '\nInstalling Fonts & Colors...\n'
