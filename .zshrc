@@ -99,6 +99,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
+
+alias allup="sudo apt update; sudo apt upgrade -y; sudo apt auto-remove -y"
+alias oledump="python3 ~/.oledump/oledump.py"
+alias pecheck="python3 ~/.pecheck.py"
+
 unsetopt HIST_VERIFY
 export PATH="$HOME/.local/bin:$PATH"
