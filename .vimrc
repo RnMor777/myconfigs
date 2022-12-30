@@ -19,16 +19,19 @@ Plugin 'dense-analysis/ale'
 Plugin 'maximbaz/lightline-ale'
 Plugin 'aben20807/vim-runner'
 
-call vundle#end() 
-filetype plugin indent on 
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
+call vundle#end()
+filetype plugin indent on
 
 " Sets line numbs
 set number
 
 " Sets up tabs spacing
-set tabstop=4       
-set shiftwidth=4   
-set softtabstop=4 
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 
 "sets up colorscheme
@@ -55,7 +58,7 @@ let g:lightline = {
       \   'right': [ ['fileformat', 'fileencoding', 'filetype'] ]
       \ },
       \ 'component': {
-      \     'lineinfo': "\ue0a1 %l:%-2c", 'line': '%l', 'column': '%c', 'close': '%999X X ', 'winnr': '%{winnr()}' 
+      \     'lineinfo': "\ue0a1 %l:%-2c", 'line': '%l', 'column': '%c', 'close': '%999X X ', 'winnr': '%{winnr()}'
       \ },
       \ 'component_expand': {
       \   'buffers': 'lightline#bufferline#buffers',
@@ -86,11 +89,12 @@ let g:lightline#bufferline#unnamed = '[No Name]'
 let g:lightline#ale#indicator_infos = "\uf129 "
 let g:lightline#ale#indicator_warnings = "\uf071 "
 let g:lightline#ale#indicator_errors = "\uf05e "
+let b:ale_linters = {'python': ['pylint']}
 
 " Adds the unicode git symbol
 function! AddGitSymbol()
     if gitbranch#name() !=# ''
-        return "\ue0a0" . gitbranch#name() 
+        return "\ue0a0" . gitbranch#name()
     else
         return ""
     endif
@@ -164,3 +168,6 @@ augroup remember_folds
     autocmd BufWinLeave * mkview
     autocmd BufWinEnter * silent! loadview
 augroup END
+
+" binds syntax complete
+let g:UltiSnipsExpandTrigger="<s-tab>"

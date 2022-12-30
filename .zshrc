@@ -103,6 +103,11 @@ source $ZSH/oh-my-zsh.sh
 alias allup="sudo apt update; sudo apt upgrade -y; sudo apt auto-remove -y"
 alias oledump="python3 ~/.oledump/oledump.py"
 alias pecheck="python3 ~/.pecheck.py"
+alias wordle='cd ~/Documents/x86-Assembly-Wordle/ && ./Wordle; cd -'
+
+function kat {
+    mkdir $1 && cd $1 && vim PythonSolution.py
+}
 
 unsetopt HIST_VERIFY
 export PATH="$HOME/.local/bin:$PATH"
