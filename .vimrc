@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'ajh17/vimcompletesme'
+"Plugin 'ajh17/vimcompletesme'
 Plugin 'preservim/nerdcommenter'
 Plugin 'itchyny/lightline.vim'
 Plugin 'raimondi/delimitmate'
